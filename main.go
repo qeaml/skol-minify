@@ -17,10 +17,17 @@ var Sanitizer = strings.NewReplacer(
 	"\r", "\\r",
 	"\t", "\\t")
 
+const Version = 1.0
+const For = 0.3
+
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Printf("Usage: %s <input file>", os.Args[0])
+		fmt.Printf("Usage: %s <input file>\nOptionally, use -v to view version information.\n", os.Args[0])
 		os.Exit(1)
+	}
+	if os.Args[1] == "-v" {
+		fmt.Printf("skol-minify %.2f for skol %.1f\n", Version, For)
+		return
 	}
 
 	inf, err := os.Open(os.Args[1])
