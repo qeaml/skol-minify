@@ -17,7 +17,7 @@ var Sanitizer = strings.NewReplacer(
 	"\r", "\\r",
 	"\t", "\\t")
 
-const Version = 1.0
+const Version = 1.01
 const For = 0.3
 
 func main() {
